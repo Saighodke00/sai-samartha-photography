@@ -7,6 +7,16 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { X, ArrowLeft, ArrowRight } from "lucide-react";
 
+const resolveImageSrc = (src: string) => {
+  if (src.startsWith("/images/home/")) {
+    return src;
+  }
+  if (src.startsWith("/images/")) {
+    return src.replace("/images/", "https://huggingface.co/datasets/Sai-ban111/sai-samartha-photography-assets/resolve/main/");
+  }
+  return src;
+};
+
 type Category = {
   key: string;
   label: string;
@@ -362,7 +372,7 @@ export default function PortfolioPage() {
                 >
                   <div style={{ position: "relative", aspectRatio: i % 3 === 0 ? "3/4" : "4/3" }}>
                     <Image
-                      src={img.src}
+                      src={resolveImageSrc(img.src)}
                       alt={img.alt}
                       fill
                       style={{ objectFit: "cover" }}
@@ -459,7 +469,7 @@ export default function PortfolioPage() {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={images[lightboxIndex].src}
+              src={resolveImageSrc(images[lightboxIndex].src)}
               alt={images[lightboxIndex].alt}
               fill
               style={{ objectFit: "contain" }}

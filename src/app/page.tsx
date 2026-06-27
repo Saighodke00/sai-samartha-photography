@@ -19,6 +19,18 @@ import {
   Calendar,
 } from "lucide-react";
 
+// ─── Utilities ─────────────────────────────────────────────────────────────
+
+const resolveImageSrc = (src: string) => {
+  if (src.startsWith("/images/home/")) {
+    return src;
+  }
+  if (src.startsWith("/images/")) {
+    return src.replace("/images/", "https://huggingface.co/datasets/Sai-ban111/sai-samartha-photography-assets/resolve/main/");
+  }
+  return src;
+};
+
 // ─── Data ──────────────────────────────────────────────────────────────────
 
 const heroImages = [
@@ -507,7 +519,7 @@ function FeaturedWork() {
             >
               <div style={{ position: "relative", aspectRatio: item.span === "tall" ? "3/4" : "4/3" }}>
                 <Image
-                  src={item.src}
+                  src={resolveImageSrc(item.src)}
                   alt={`Sai Samarth Photography — ${item.category}`}
                   fill
                   style={{ objectFit: "cover" }}
@@ -605,7 +617,7 @@ function FeaturedWork() {
           </button>
           <div style={{ position: "relative", width: "90vw", height: "85vh" }}>
             <Image
-              src={lightbox}
+              src={resolveImageSrc(lightbox)}
               alt="Full size preview"
               fill
               style={{ objectFit: "contain" }}
