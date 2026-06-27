@@ -73,12 +73,12 @@ const heroImages = [
 const featuredWork = [
   { src: "/images/wedding/DSC00003.jpg", category: "Wedding", span: "tall" },
   { src: "/images/prewedding/1.jpg", category: "Pre-Wedding", span: "normal" },
-  { src: "/images/engagement/01.jpg", category: "Engagement", span: "normal" },
+  { src: "/images/engagement/DSC_1174.JPG", category: "Engagement", span: "normal" },
   { src: "/images/wedding/DSC00007.jpg", category: "Wedding", span: "normal" },
-  { src: "/images/birthday/DSC_7161.JPG", category: "Birthday", span: "tall" },
+  { src: "/images/birthday/DSC_7144.JPG", category: "Birthday", span: "tall" },
   { src: "/images/prewedding/2.jpg", category: "Pre-Wedding", span: "normal" },
   { src: "/images/wedding/DSC00014.jpg", category: "Wedding", span: "normal" },
-  { src: "/images/baby-shoot/DSC_2022.jpg", category: "Baby Shoot", span: "normal" },
+  { src: "/images/baby-shoot/DSC_0070.jpg", category: "Baby Shoot", span: "normal" },
 ];
 
 const services = [
