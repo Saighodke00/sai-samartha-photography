@@ -133,18 +133,15 @@ function useInView(threshold = 0.15) {
 
 function HeroSection() {
   const [current, setCurrent] = useState(0);
-  const [fading, setFading] = useState(false);
+  const [prev, setPrev] = useState<number | null>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setFading(true);
-      setTimeout(() => {
-        setCurrent((c) => (c + 1) % heroImages.length);
-        setFading(false);
-      }, 600);
-    }, 5000);
+      setPrev(current);
+      setCurrent((c) => (c + 1) % heroImages.length);
+    }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [current]);
 
   return (
     <section
@@ -158,13 +155,35 @@ function HeroSection() {
         justifyContent: "center",
       }}
     >
-      {/* Background Image */}
+      {/* Background Images for Cross-fade */}
+      {prev !== null && (
+        <div
+          key={`prev-${prev}`}
+          style={{
+            position: "absolute",
+            inset: 0,
+            opacity: 1,
+            zIndex: 0,
+          }}
+        >
+          <Image
+            src={heroImages[prev]}
+            alt="Previous Background"
+            fill
+            style={{ objectFit: "cover", objectPosition: "center" }}
+            quality={60}
+          />
+        </div>
+      )}
+      
       <div
+        key={`curr-${current}`}
         style={{
           position: "absolute",
           inset: 0,
-          opacity: fading ? 0 : 1,
-          transition: "opacity 0.6s ease",
+          opacity: 0,
+          animation: "crossFade 1.8s ease-in-out forwards",
+          zIndex: 1,
         }}
       >
         <Image
@@ -360,6 +379,10 @@ function HeroSection() {
       </div>
 
       <style>{`
+        @keyframes crossFade {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
         @keyframes fadeUp {
           from { opacity: 0; transform: translateY(24px); }
           to { opacity: 1; transform: translateY(0); }
