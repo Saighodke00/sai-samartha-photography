@@ -289,6 +289,7 @@ function HeroSection() {
           </p>
 
           <div
+            className="hero-buttons-row"
             style={{
               display: "flex",
               gap: "16px",
@@ -361,6 +362,7 @@ function HeroSection() {
 
       {/* Slide dots */}
       <div
+        className="hero-slide-dots"
         style={{
           position: "absolute",
           right: "32px",

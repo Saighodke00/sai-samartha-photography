@@ -161,3 +161,65 @@ h1, h2, h3, h4 {
   border-color: rgba(212, 175, 55, 0.3);
   box-shadow: 0 0 40px rgba(212, 175, 55, 0.08);
 }
+
+/* ─── Responsive — Tablet (≤900px) ─────────────────────────────────────── */
+@media (max-width: 900px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .services-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .about-hero-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .values-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .contact-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+  .masonry-grid { columns: 2 !important; }
+}
+
+/* ─── Responsive — Mobile (≤600px) ─────────────────────────────────────── */
+@media (max-width: 600px) {
+  body { overflow-x: hidden; }
+
+  /* Hero */
+  .hero-buttons-row {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100%;
+  }
+  .hero-btn-primary, .hero-btn-ghost {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 15px 24px !important;
+    font-size: 0.72rem !important;
+  }
+  .hero-slide-dots {
+    right: 12px !important;
+    gap: 6px !important;
+  }
+
+  /* Grids */
+  .stats-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+  .services-grid { grid-template-columns: 1fr !important; }
+  .values-grid { grid-template-columns: 1fr !important; }
+  .form-row { grid-template-columns: 1fr !important; }
+  .contact-form { padding: 28px 16px !important; }
+  .footer-grid { grid-template-columns: 1fr !important; }
+  .masonry-grid { columns: 1 !important; }
+
+  /* WhatsApp */
+  .whatsapp-float {
+    bottom: 18px !important;
+    right: 14px !important;
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  /* Lightbox */
+  .lightbox-overlay button {
+    width: 40px !important;
+    height: 40px !important;
+  }
+}
+
+/* ─── Responsive — Small Mobile (≤380px) ───────────────────────────────── */
+@media (max-width: 380px) {
+  .stats-grid { gap: 10px !important; }
+  .whatsapp-float { width: 46px !important; height: 46px !important; right: 10px !important; }
+}
