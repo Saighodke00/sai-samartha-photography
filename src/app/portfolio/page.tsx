@@ -7,14 +7,27 @@ import Footer from "@/components/Footer";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import { X, ArrowLeft, ArrowRight } from "lucide-react";
 
+// Maps local image paths to Hugging Face dataset URLs
+// Handles folder name mismatches between code and HF dataset
+const HF_BASE = "https://huggingface.co/datasets/Sai-ban111/sai-samartha-photography-assets/resolve/main";
+
+const FOLDER_MAP: Record<string, string> = {
+  "prewedding":  "preweding",
+  "engagement":  "engegement photo",
+  "baby-shoot":  "baby shoot",
+  "maternity":   "maternty shoot",
+};
+
 const resolveImageSrc = (src: string) => {
-  if (src.startsWith("/images/home/")) {
-    return src;
-  }
-  if (src.startsWith("/images/")) {
-    return src.replace("/images/", "https://huggingface.co/datasets/Sai-ban111/sai-samartha-photography-assets/resolve/main/");
-  }
-  return src;
+  if (src.startsWith("/images/home/")) return src;
+  if (!src.startsWith("/images/")) return src;
+  const rest = src.replace("/images/", "");
+  const slashIdx = rest.indexOf("/");
+  if (slashIdx === -1) return `${HF_BASE}/${rest}`;
+  const folder = rest.substring(0, slashIdx);
+  const file   = rest.substring(slashIdx + 1);
+  const hfFolder = FOLDER_MAP[folder] ?? folder;
+  return `${HF_BASE}/${encodeURIComponent(hfFolder)}/${encodeURIComponent(file)}`;
 };
 
 type Category = {
