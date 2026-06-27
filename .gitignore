@@ -41,4 +41,5 @@ yarn-error.log*
 next-env.d.ts
 
 # large media files — host these on Supabase Storage / Cloudinary instead
-/public/images/
+/public/images/*
+!/public/images/home/

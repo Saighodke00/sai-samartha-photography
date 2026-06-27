@@ -22,12 +22,25 @@ import {
 // ─── Data ──────────────────────────────────────────────────────────────────
 
 const heroImages = [
-  "/images/hero/DSC_3086.JPG",
-  "/images/hero/DSC_3296.JPG",
-  "/images/hero/DSC_3556.JPG",
-  "/images/hero/DSC_3613.JPG",
-  "/images/hero/DSC_3703.JPG",
-  "/images/hero/DSC_3749.JPG",
+  "/images/home/1.jpg",
+  "/images/home/288A8106.jpg",
+  "/images/home/288A8142.jpg",
+  "/images/home/4.jpg",
+  "/images/home/7C7A9918.jpg",
+  "/images/home/DSC00094.jpg",
+  "/images/home/DSC_4903.JPG",
+  "/images/home/DSC_6550.JPG",
+  "/images/home/DSC_7991.jpg",
+  "/images/home/IMG-20240217-WA0055.jpg",
+  "/images/home/IMG-20240219-WA0004.jpg",
+  "/images/home/IMG-20240812-WA0069.jpg",
+  "/images/home/IMG-20250531-WA0018.jpg",
+  "/images/home/IMG-20251217-WA0032 (1).jpg",
+  "/images/home/IMG_20240619_183229_519.jpg",
+  "/images/home/PPF08141.JPG",
+  "/images/home/_B2A1385.JPG",
+  "/images/home/_DSC2687.JPG",
+  "/images/home/_DSC7365.JPG",
 ];
 
 const featuredWork = [
